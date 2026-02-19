@@ -1,507 +1,266 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbe & Chop - Prends soin de ta barbe, prends soin de toi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <h1>Barbe & Chop</h1>
+        <p class="tagline">Prends soin de ta barbe, prends soin de toi.</p>
+      </div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#outil">Mon Type de Barbe</a>
+        <a href="#conseils-section">Conseils</a>
+        <a href="#contact" class="cta-btn">Rendez-vous</a>
+      </nav>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
-        <title>Gentlemen's Barber Shop - HTML CSS Template</title>
+  <main>
+    <section id="accueil" class="hero-section">
+      <div class="hero-content">
+        <h2>Bienvenue sur Barbe & Chop</h2>
+        <p class="hero-text">
+          Tu veux une barbe soignée, douce et stylée ? Tu es au bon endroit.  
+          Que tu sois étudiant, jeune actif ou simplement curieux, notre site t'aide à adopter une routine simple et efficace — sans prise de tête.
+        </p>
+        <div class="hero-buttons">
+          <a href="#outil" class="btn btn-primary">Découvrir mon style</a>
+          <a href="#conseils-section" class="btn btn-secondary">Conseils pratiques</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="barber-icon">✂</div>
+      </div>
+    </section>
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <section id="outil" class="tool-section">
+      <div class="section-header">
+        <h2>Détermine ton type de barbe</h2>
+        <p>Choisis le style qui te ressemble et reçois des conseils personnalisés</p>
+      </div>
+      <div class="tool-container">
+        <div class="form-group">
+          <label for="type-barbe">Sélectionne ton type de barbe :</label>
+          <select id="type-barbe">
+            <option value="">-- Choisis --</option>
+            <option value="courte">Courte (moins de 2 cm)</option>
+            <option value="moyenne">Moyenne (2 à 5 cm)</option>
+            <option value="longue">Longue (plus de 5 cm)</option>
+            <option value="frisee">Frisée ou bouclée</option>
+            <option value="fine">Fine ou clairsemée</option>
+          </select>
+        </div>
+        <button onclick="afficherConseils()" class="btn btn-primary">Obtenir mes conseils</button>
+        <div id="conseils" class="conseils-box"></div>
+      </div>
+    </section>
 
-        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+    <section id="conseils-section" class="tips-section">
+      <div class="section-header">
+        <h2>Routine quotidienne</h2>
+        <p>Les gestes essentiels pour une barbe au top</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🚿</div>
+          <h3>Lavage</h3>
+          <p>Lave ta barbe 2 à 3 fois par semaine avec un shampoing doux</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">💧</div>
+          <h3>Hydratation</h3>
+          <p>Applique de l'huile à barbe chaque soir</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🪮</div>
+          <h3>Brossage</h3>
+          <p>Brosse ta barbe matin et soir pour stimuler la pousse</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">✂️</div>
+          <h3>Taille</h3>
+          <p>Coupe les pointes tous les 4-6 semaines</p>
+        </div>
+      </div>
+      <div class="reminder">
+        <span class="reminder-icon">💧</span>
+        <div class="reminder-text">
+          <strong>Rappel :</strong> Bois de l'eau ! Une barbe saine commence par une peau hydratée.
+        </div>
+      </div>
+    </section>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <section id="contact" class="contact-section">
+      <div class="section-header">
+        <h2>Prendre rendez-vous</h2>
+        <p>Reserve ta prochaine séance de rasage ou de taille</p>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votre@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" placeholder="06 12 34 56 78" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service">
+              <option value="">-- Choisir --</option>
+              <option value="rasage">Rasage traditionnel</option>
+              <option value="taille">Taille de barbe</option>
+              <option value="complet">Soin complet</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optionnel)</label>
+          <textarea id="message" rows="4" placeholder="Vos remarques..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Barbe & Chop</h3>
+        <p>Prends soin de ta barbe, prends soin de toi.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Liens rapides</h4>
+        <a href="#accueil">Accueil</a>
+        <a href="#outil">Mon Type de Barbe</a>
+        <a href="#conseils-section">Conseils</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 123 Rue du Barbier, Paris</p>
+        <p>📞 06 12 34 56 78</p>
+        <p>✉️ contact@barbeetchop.fr</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Barbe & Chop – Un style soigné, une confiance décuplée.</p>
+    </div>
+  </footer>
 
-        <link href="css/templatemo-barber-shop.css" rel="stylesheet">
-<!--
-
-TemplateMo 585 Barber Shop
-
-https://templatemo.com/tm-585-barber-shop
-
--->
-    </head>
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
     
-    <body>
-
-        <div class="container-fluid">
-            <div class="row">
-
-                <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse p-0">
-
-                    <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="images/templatemo-barber-logo.png" class="logo-image img-fluid" align="">
-                        </a>
-
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Home</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">Our Story</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">Services</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">Price List</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                
-                <div class="col-md-8 ms-sm-auto col-lg-9 p-0">
-                    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-lg-8 col-12">
-                                        <h1 class="text-white mb-lg-3 mb-4"><strong>Barber <em>Shop</em></strong></h1>
-                                        <p class="text-black">Get the most professional haircut for you</p>
-                                        <br>
-                                        <a class="btn custom-btn custom-border-btn custom-btn-bg-white smoothscroll me-2 mb-2" href="#section_2">About Us</a>
-
-                                        <a class="btn custom-btn smoothscroll mb-2" href="#section_3">What we do</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block d-lg-flex flex-column justify-content-center align-items-center">
-                                <img src="images/vintage-chair-barbershop.jpg" class="custom-block-image img-fluid" alt="">
-
-                                <h4><strong class="text-white">Hurry Up! Get good haircut.</strong></h4>
-
-                                <a href="#booking-section" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Book a seat</a>
-                            </div>
-                    </section>
-
-
-                    <section class="about-section section-padding" id="section_2">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-12 col-12 mx-auto">
-                                    <h2 class="mb-4">Best hairdressers</h2>
-
-                                    <div class="border-bottom pb-3 mb-5">
-                                        <p>Gentlemen's Barber Shop is new Bootstrap v5 HTML CSS template by <a href="https://templatemo.com/page/1" target="_blank">TemplateMo</a> for everyone. There is a sidebar menu to navigate the one-page layout. You can feel free to adapt this template for your business.</p>
-                                    </div>
-                                </div>
-
-                                    <h6 class="mb-5">Meet Babers</h6>
-
-                                        <div class="col-lg-5 col-12 custom-block-bg-overlay-wrap me-lg-5 mb-5 mb-lg-0">
-                                            <img src="images/barber/portrait-male-hairdresser-with-scissors.jpg" class="custom-block-bg-overlay-image img-fluid" alt="">
-
-                                            <div class="team-info d-flex align-items-center flex-wrap">
-                                                <p class="mb-0">Redo</p>
-
-                                                <ul class="social-icon ms-auto">
-                                                    <li class="social-icon-item">
-                                                        <a href="#" class="social-icon-link bi-facebook">
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="social-icon-item">
-                                                        <a href="#" class="social-icon-link bi-instagram">
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="social-icon-item">
-                                                        <a href="#" class="social-icon-link bi-whatsapp">
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-5 col-12 custom-block-bg-overlay-wrap mt-4 mt-lg-0 mb-5 mb-lg-0">
-                                            <img src="images/barber/portrait-mid-adult-bearded-male-barber-with-folded-arms.jpg" class="custom-block-bg-overlay-image img-fluid" alt="">
-
-                                            <div class="team-info d-flex align-items-center flex-wrap">
-                                                <p class="mb-0">Sam</p>
-
-                                                <ul class="social-icon ms-auto">
-                                                    <li class="social-icon-item">
-                                                        <a href="#" class="social-icon-link bi-facebook">
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="social-icon-item">
-                                                        <a href="#" class="social-icon-link bi-instagram">
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="featured-section section-padding">
-                        <div class="section-overlay"></div>
-
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-10 col-12 mx-auto">
-                                    <h2 class="mb-3">Get 32% Discount</h2>
-
-                                    <p>on every second week of the month</p>
-
-                                    <strong>Promo Code: BarBerMo</strong>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-
-                    <section class="services-section section-padding" id="section_3">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-12 col-12">
-                                    <h2 class="mb-5">Services</h2>
-                                </div>
-
-                                <div class="col-lg-6 col-12 mb-4">
-                                    <div class="services-thumb">
-                                        <img src="images/services/woman-cutting-hair-man-salon.jpg" class="services-image img-fluid" alt="">
-
-                                        <div class="services-info d-flex align-items-end">
-                                            <h4 class="mb-0">Hair cut</h4>
-
-                                            <strong class="services-thumb-price">Dm36.00</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12 mb-4">
-                                    <div class="services-thumb">
-                                        <img src="images/services/hairdresser-grooming-their-client.jpg" class="services-image img-fluid" alt="">
-
-                                        <div class="services-info d-flex align-items-end">
-                                            <h4 class="mb-0">Washing</h4>
-
-                                            <strong class="services-thumb-price">Dm25.00</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                    <div class="services-thumb">
-                                        <img src="images/services/hairdresser-grooming-client.jpg" class="services-image img-fluid" alt="">
-
-                                        <div class="services-info d-flex align-items-end">
-                                            <h4 class="mb-0">Shaves</h4>
-
-                                            <strong class="services-thumb-price">Dm30.00</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <div class="services-thumb">
-                                        <img src="images/services/boy-getting-haircut-salon-front-view.jpg" class="services-image img-fluid" alt="">
-
-                                        <div class="services-info d-flex align-items-end">
-                                            <h4 class="mb-0">Kids</h4>
-
-                                            <strong class="services-thumb-price">$25.00</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="booking-section section-padding" id="booking-section">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-10 col-12 mx-auto">
-                                <form action="#" method="post" class="custom-form booking-form" id="bb-booking-form" role="form">
-                                    <div class="text-center mb-5">
-                                        <h2 class="mb-1">Book a seat</h2>
-
-                                        <p>Please fill out the form and we get back to you</p>
-                                    </div>
-
-                                    <div class="booking-form-body">
-                                        <div class="row">
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="text" name="bb-name" id="bb-name" class="form-control" placeholder="Full name" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="tel" class="form-control" name="bb-phone" placeholder="Mobile 010-020-0340" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
-                                            </div>
-                                        
-                                            <div class="col-lg-6 col-12">
-                                                <input class="form-control" type="time" name="bb-time" value="18:30" />
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <select class="form-select form-control" name="bb-branch" id="bb-branch" aria-label="Default select example">
-                                                    <option selected="">Select Branches</option>
-                                                    <option value="Grünberger">Grünberger</option>
-                                                    <option value="Behrenstraße">Behrenstraße</option>
-                                                    <option value="Weinbergsweg">Weinbergsweg</option>
-                                                </select>
-
-                                            </div>
-                                            <div class="col-lg-6 col-12">
-                                                <input type="date" name="bb-date" id="bb-date" class="form-control" placeholder="Date" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="number" name="bb-number" id="bb-number" class="form-control" placeholder="Number of People" required>
-                                            </div>
-                                        </div>
-
-                                        <textarea name="bb-message" rows="3" class="form-control" id="bb-message" placeholder="Comment (Optionals)"></textarea>
-
-                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" class="form-control">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                </section>
-
-
-                    <section class="price-list-section section-padding" id="section_4">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-8 col-12">
-                                    <div class="price-list-thumb-wrap">
-                                        <div class="mb-4">
-                                            <h2 class="mb-2">Price List</h2>
-
-                                            <strong>Starting at Dm25</strong>
-                                        </div>
-
-                                        <div class="price-list-thumb">
-                                            <h6 class="d-flex">
-                                                Haircut
-                                                <span class="price-list-thumb-divider"></span>
-
-                                                <strong>Dm32.00</strong>
-                                            </h6>
-                                        </div>
-
-                                        <div class="price-list-thumb">
-                                            <h6 class="d-flex">
-                                                Beard Trim
-                                                <span class="price-list-thumb-divider"></span>
-
-                                                <strong>Dm26.00</strong>
-                                            </h6>
-                                        </div>
-
-                                        <div class="price-list-thumb">
-                                            <h6 class="d-flex">
-                                                Razor Cut
-                                                <span class="price-list-thumb-divider"></span>
-
-                                                <strong>Dm36.00</strong>
-                                            </h6>
-                                        </div>
-
-                                        <div class="price-list-thumb">
-                                            <h6 class="d-flex">
-                                                Shaves
-                                                <span class="price-list-thumb-divider"></span>
-
-                                                <strong>Dm30.00</strong>
-                                            </h6>
-                                        </div>
-
-                                        <div class="price-list-thumb">
-                                            <h6 class="d-flex">
-                                                Styling / Color
-                                                <span class="price-list-thumb-divider"></span>
-
-                                                <strong>Dm25.00</strong>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-12 custom-block-bg-overlay-wrap mt-5 mb-5 mb-lg-0 mt-lg-0 pt-3 pt-lg-0">
-                                    <img src="images/vintage-chair-barbershop.jpg" class="custom-block-bg-overlay-image img-fluid" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-
-                <section class="contact-section" id="section_5">
-                    <div class="section-padding section-bg">
-                        <div class="container">
-                            <div class="row">   
-
-                                <div class="col-lg-8 col-12 mx-auto">
-                                    <h2 class="text-center">Say hello</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-padding">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-6 col-12">
-                                    <h5 class="mb-3"><strong>Contact</strong> Information</h5>
-
-                                    <p class="text-white d-flex mb-1">
-                                        <a href="tel: 120-240-3600" class="site-footer-link">
-                                            +212 680-152962
-                                        </a>
-                                    </p>
-
-                                    <p class="text-white d-flex">
-                                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                                            hello@barber.beauty
-                                        </a>
-                                    </p>
-
-                                    <ul class="social-icon">
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-facebook">
-                                            </a>
-                                        </li>
-            
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-twitter">
-                                            </a>
-                                        </li>
-            
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-instagram">
-                                            </a>
-                                        </li>
-
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-youtube">
-                                            </a>
-                                        </li>
-
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-whatsapp">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-lg-5 col-12 contact-block-wrap mt-5 mt-lg-0 pt-4 pt-lg-0 mx-auto">
-                                    <div class="contact-block">
-                                        <h6 class="mb-0">
-                                            <i class="custom-icon bi-shop me-3"></i>
-
-                                            <strong>Open Daily</strong>
-
-                                            <span class="ms-auto">10:00 AM - 8:00 PM</span>
-                                        </h6>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-12 mx-auto mt-5 pt-5">
-                                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7702.122299518348!2d13.396786616231472!3d52.531268574169616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85180d9075183%3A0xbba8c62c3dc41a7d!2sBarbabella%20Barbershop!5e1!3m2!1sen!2sth!4v1673886261201!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <footer class="site-footer">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-12 col-12">
-                                <h4 class="site-footer-title mb-4">Our Branches</h4>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-11">
-                                <div class="site-footer-thumb">
-                                    <strong class="mb-1">Grünberger</strong>
-
-                                    <p>Grünberger Str. 31, 10245 Berlin, Germany</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-11">
-                                <div class="site-footer-thumb">
-                                    <strong class="mb-1">Behrenstraße</strong>
-
-                                    <p>Behrenstraße 27, 10117 Berlin, Germany</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-11">
-                                <strong class="mb-1">Weinbergsweg</strong>
-
-                                <p>Weinbergsweg 23, 10119 Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="site-footer-bottom">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-8 col-12 mt-4">
-                                    <p class="copyright-text mb-0">Copyright © 2036 Barber Shop 
-                                    - Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
-                                </div>
-
-                                <div class="col-lg-2 col-md-3 col-3 mt-lg-4 ms-auto">
-                                    <a href="#section_1" class="back-top-icon smoothscroll" title="Back Top">
-                                        <i class="bi-arrow-up-circle"></i>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
-
-    </body>
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Beard advice function
+    function afficherConseils() {
+      const type = document.getElementById('type-barbe').value;
+      const conseilDiv = document.getElementById('conseils');
+      
+      let message = '';
+      let icon = '';
+
+      switch(type) {
+        case 'courte':
+          icon = '✂️';
+          message = "Ta barbe courte a besoin d'un entretien régulier. Utilise un baume léger et taille les contours 2 fois par semaine pour garder un look net.";
+          break;
+        case 'moyenne':
+          icon = '✨';
+          message = "Parfait équilibre ! Hydrate bien avec une huile à barbe et brosse quotidiennement pour éviter les nœuds et maintenir une forme elegante.";
+          break;
+        case 'longue':
+          icon = '🌟';
+          message = "Une barbe longue demande plus d'attention : utilise un après-shampoing, démêle avec un peigne en bois, et hydrate en profondeur pour éviter les frisottis.";
+          break;
+        case 'frisee':
+          icon = '🌀';
+          message = "Les barbes frisées ont tendance à sécher. Privilégie les huiles nourrissantes (ricin, argan) et évite le lavage trop frequent qui dessèche.";
+          break;
+        case 'fine':
+          icon = '💪';
+          message = "Pour une barbe fine, stimule la pousse avec un massage au baume et laisse-la pousser au moins 4 semaines sans couper. La patience est ta meilleure alliée!";
+          break;
+        default:
+          icon = '🤔';
+          message = "Sélectionne d'abord ton type de barbe pour recevoir des conseils personnalisés.";
+      }
+
+      conseilDiv.innerHTML = `<span class="conseil-icon">${icon}</span><p>${message}</p>`;
+      conseilDiv.style.display = 'block';
+      
+      // Scroll to the conseils box
+      conseilDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Form submission handling
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Merci pour votre demande! Nous vous contacterons rapidement pour confirmer votre rendez-vous.');
+      this.reset();
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
 </html>
